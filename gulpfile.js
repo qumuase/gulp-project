@@ -46,9 +46,9 @@ gulp.task('go',function(){
 		browserSync({
 			files: '**',
 			server: {
-				baseDir: './dist/html'
+				baseDir: './'
 			},
-			startPath: './',
+			startPath: './dist/html',
 			directory: true
 		});
 	})
