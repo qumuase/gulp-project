@@ -1,0 +1,10 @@
+header {
+  background: #fff; }
+  header h1 {
+    color: #333;
+    font-weight: normal; }
+  header p {
+    border: 1px solid #999;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px; }

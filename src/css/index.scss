@@ -1,0 +1,25 @@
+$color-f: #f13a3a;
+$color-d: #dcdcdc;
+$color-n: #999;
+$color-t: #333;
+@mixin rounded($radius: 4px){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin overflow(){
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+header{
+	background: #fff;
+	h1{
+		color: #333;
+		font-weight: normal;
+	}
+	p{
+		border: 1px solid $color-n;
+		@include rounded();
+	}
+}
