@@ -1,4 +1,21 @@
 {
+  "name": "gulp-project",
+  "version": "1.0.0",
+  "description": "this is a gulp test demo",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "engineering",
+  ],
+  "author": "qumuase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qumuase/gulp-project"
+  },
+  "homepage": "https://github.com/qumuase/gulp-project",
   "devDependencies": {
     "browser-sync": "^2.18.5",
     "gulp": "^3.9.1",
