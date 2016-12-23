@@ -4,7 +4,8 @@ header {
     color: #333;
     font-weight: normal; }
   header p {
-    border: 1px solid #999;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dcdcdc;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px; }
