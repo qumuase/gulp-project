@@ -19,13 +19,10 @@ gulp.task('sass',function(){
 	.pipe(gulp.dest('./dist/asset'));
 });
 
-gulp.task('watch:html',function(){
+gulp.task('watch',function(){
 	gulp.watch('./src/**/*.html',['html']);
-});
-
-gulp.task('watch:css',function(){
 	gulp.watch('./src/**/*.scss',['sass']);
-});
+})
 
 gulp.task('dev',function(){
 	gulpSequence('default',function(){
@@ -40,4 +37,4 @@ gulp.task('dev',function(){
 	})
 })
 
-gulp.task('default',['html','sass','watch:html','watch:css','dev']);
+gulp.task('default',['html','sass','watch','dev']);
