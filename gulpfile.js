@@ -7,17 +7,20 @@ var gulp = require('gulp'),
 
 gulp.task('html',function(){
 	gulp.src('./src/**/*.html')
-	.pipe(htmlPrettify({
-		indent_char: '',
-		indent_size: 4
-	}))
-	.pipe(gulp.dest('./dist'));
+		.pipe(htmlPrettify({
+			indent_char: '',
+			indent_size: 4
+		}))
+		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass',function(){
 	gulp.src('./src/**/*.scss')
-	.pipe(sass({outputStyle: 'expanded'}))
-	.pipe(gulp.dest('./dist/asset'));
+		.pipe(sass({outputStyle: 'expanded'}))
+		.pipe(autoprefixer({
+			broswers: ['last 2 versions']
+		}))
+		.pipe(gulp.dest('./dist/asset'));
 });
 
 gulp.task('cssmin',function(){
@@ -28,9 +31,6 @@ gulp.task('cssmin',function(){
 			keepBreaks: true,
 			keepSpecialComments: '*'
 		})
-		.pipe(autoprefixer({
-			broswers: ['last 2 versions']
-		}))
 		.pipe(gulp.dest('./dist/asset'));
 })
 
