@@ -28,6 +28,9 @@ gulp.task('cssmin',function(){
 			keepBreaks: true,
 			keepSpecialComments: '*'
 		})
+		.pipe(autoprefixer({
+			broswers: ['last 2 versions']
+		}))
 		.pipe(gulp.dest('./dist/asset'));
 })
 
