@@ -2,6 +2,7 @@ var gulp = require('gulp'),
 	gulpSequence = require('gulp-sequence'),
 	sass = require('gulp-sass'),
 	cleanCss = require('gulp-clean-css'),
+	uglify = require('gulp-uglify'),
 	htmlPrettify = require('gulp-html-prettify'),
 	browserSync = require('browser-sync');
 
@@ -20,6 +21,12 @@ gulp.task('sass',function(){
 		.pipe(autoprefixer({
 			broswers: ['last 2 versions']
 		}))
+		.pipe(gulp.dest('./dist/asset'));
+});
+
+gulp.task('js', function(){
+	gulp.src('./src/**/*.js')
+		.pipe(uglify())
 		.pipe(gulp.dest('./dist/asset'));
 });
 
