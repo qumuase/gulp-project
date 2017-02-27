@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	gulpSequence = require('gulp-sequence'),
 	sass = require('gulp-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
 	cleanCss = require('gulp-clean-css'),
 	uglify = require('gulp-uglify'),
 	htmlPrettify = require('gulp-html-prettify'),
@@ -32,12 +33,12 @@ gulp.task('js', function(){
 
 gulp.task('cssmin',function(){
 	gulp.src('./dist/**/*.css')
-		.pipe(cleanCss(){
+		.pipe(cleanCss({
 			adcanced: false,
 			compatibility: 'ie8',
 			keepBreaks: true,
 			keepSpecialComments: '*'
-		})
+		}))
 		.pipe(gulp.dest('./dist/asset'));
 })
 
