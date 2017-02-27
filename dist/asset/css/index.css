@@ -1,11 +1,14 @@
 header {
-  background: #fff; }
-  header h1 {
-    color: #333;
-    font-weight: normal; }
-  header p {
-    padding-bottom: 5px;
-    border-bottom: 1px solid #dcdcdc;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px; }
+  background: #fff;
+}
+
+header h1 {
+  color: #333;
+  font-weight: normal;
+}
+
+header p {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dcdcdc;
+  border-radius: 4px;
+}

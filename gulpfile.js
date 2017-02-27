@@ -5,10 +5,15 @@ var gulp = require('gulp'),
 	cleanCss = require('gulp-clean-css'),
 	uglify = require('gulp-uglify'),
 	htmlPrettify = require('gulp-html-prettify'),
+	fileinclude  = require('gulp-file-include'),
 	browserSync = require('browser-sync');
 
 gulp.task('html',function(){
 	gulp.src('./src/**/*.html')
+		.pipe(fileinclude({
+	        prefix: '@@',
+	        basepath: '@file'
+		}))
 		.pipe(htmlPrettify({
 			indent_char: '',
 			indent_size: 4
