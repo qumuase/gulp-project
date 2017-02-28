@@ -10,10 +10,10 @@ var gulp = require('gulp'),
 
 gulp.task('html',function(){
 	gulp.src('./src/**/*.html')
-		.pipe(fileinclude({
-	        prefix: '@@',
-	        basepath: '@file'
-		}))
+        .pipe(fileinclude({
+          prefix: '@@',
+          basepath: '@file'
+        }))
 		.pipe(htmlPrettify({
 			indent_char: '',
 			indent_size: 4
@@ -25,8 +25,16 @@ gulp.task('sass',function(){
 	gulp.src('./src/**/*.scss')
 		.pipe(sass({outputStyle: 'expanded'}))
 		.pipe(autoprefixer({
-			broswers: ['last 2 versions']
+			browsers: ["last 20 versions"],
+			cascade: true,
+            remove: true
 		}))
+		// .pipe(cleanCss({ 	//css压缩
+		// 	adcanced: false,
+		// 	compatibility: 'ie8',
+		// 	keepBreaks: true,
+		// 	keepSpecialComments: '*'
+		// }))
 		.pipe(gulp.dest('./dist/asset'));
 });
 
@@ -35,17 +43,6 @@ gulp.task('js', function(){
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/asset'));
 });
-
-gulp.task('cssmin',function(){
-	gulp.src('./dist/**/*.css')
-		.pipe(cleanCss({
-			adcanced: false,
-			compatibility: 'ie8',
-			keepBreaks: true,
-			keepSpecialComments: '*'
-		}))
-		.pipe(gulp.dest('./dist/asset'));
-})
 
 gulp.task('watch',function(){
 	gulp.watch('./src/**/*.html',['html']);
@@ -65,4 +62,4 @@ gulp.task('dev',function(){
 	})
 })
 
-gulp.task('default',['html','sass','watch','dev']);
+gulp.task('default',['watch','dev']);
