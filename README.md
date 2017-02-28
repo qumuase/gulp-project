@@ -1,3 +1,3 @@
 # gulp-project
 
-  `gulp`
+  `gulp基础性编译工具`
