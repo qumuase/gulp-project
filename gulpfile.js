@@ -1,6 +1,8 @@
 var gulp = require('gulp'),
 	gulpSequence = require('gulp-sequence'),
 	sass = require('gulp-sass'),
+	spriter = require('gulp-css-spriter'),
+	base64 = require('gulp-base64'),
 	autoprefixer = require('gulp-autoprefixer'),
 	cleanCss = require('gulp-clean-css'),
 	uglify = require('gulp-uglify'),
@@ -22,6 +24,7 @@ gulp.task('html',function(){
 });
 
 gulp.task('sass',function(){
+	// var timestamp = +new Date();
 	gulp.src('./src/**/*.scss')
 		.pipe(sass({outputStyle: 'expanded'}))
 		.pipe(autoprefixer({
@@ -35,6 +38,15 @@ gulp.task('sass',function(){
 		// 	keepBreaks: true,
 		// 	keepSpecialComments: '*'
 		// }))
+		// .pipe(spriter({	//雪碧图
+		// 	'spriteSheet': './dist/asset/images/sprite.png',
+		// 	'pathToSpriteSheetFromCSS': './dist/asset/images/sprite.png'
+		// }))
+		.pipe(base64({
+            extensions: ['png', 'jpg'],
+            maxImageSize: 20*1024,
+            debug: false
+		}))
 		.pipe(gulp.dest('./dist/asset'));
 });
 

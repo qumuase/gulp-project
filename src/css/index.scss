@@ -19,4 +19,14 @@ header{
 		border-bottom: 1px solid #dcdcdc;
 		@include rounded();
 	}
+	.bg1{
+		background: url(/src/images/cxrz5.png) no-repeat;
+		width: 128px;
+		height: 52px;
+	}
+	.bg2{
+		background: url(/src/images/wmlogo.gif) no-repeat;
+		width: 44px;
+		height: 42px;
+	}
 }
